@@ -1,0 +1,117 @@
+<div class="container my-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">User Search</h4>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+
+        <!-- User Info -->
+        <fieldset class="mb-4">
+          <legend class="fw-semibold">User Info</legend>
+          <div class="row g-3">
+            <div class="col-md-3">
+              <label class="form-label">User ID</label>
+              <input class="form-control" formControlName="id" />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Username</label>
+              <input class="form-control" formControlName="userName" />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" formControlName="email" />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" formControlName="dateOfBirth" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Course Details -->
+        <fieldset class="mb-4">
+          <legend class="fw-semibold">Course Details</legend>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Instructor Name</label>
+              <input class="form-control" formControlName="instructorName" />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Course Title</label>
+              <input class="form-control" formControlName="courseTitle" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Price Range -->
+        <fieldset class="mb-4">
+          <legend class="fw-semibold">Price Range</legend>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">From</label>
+              <input type="number" class="form-control" formControlName="priceFrom" />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">To</label>
+              <input type="number" class="form-control" formControlName="priceTo" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Enrollment -->
+        <fieldset class="mb-4">
+          <legend class="fw-semibold">Enrollment Period</legend>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">From</label>
+              <input type="date" class="form-control" formControlName="enrolledFrom" />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">To</label>
+              <input type="date" class="form-control" formControlName="enrolledTo" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Pagination -->
+        <fieldset class="mb-4">
+          <legend class="fw-semibold">Pagination</legend>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">Page</label>
+              <input type="number" min="1" class="form-control" formControlName="page" />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Page Size</label>
+              <select class="form-select" formControlName="pageSize">
+                <option [value]="5">5</option>
+                <option [value]="10">10</option>
+                <option [value]="20">20</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Actions -->
+        <div class="d-flex justify-content-end gap-2">
+          <button type="submit" class="btn btn-primary">
+            Search
+          </button>
+          <button type="button" class="btn btn-outline-secondary" (click)="onReset()">
+            Reset
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container mt-4">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>User Search Results</h3>
+    <button class="btn btn-outline-secondary"
+            routerLink="/users/search">
+      Back to Search
+    </button>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="users.length === 0"
+       class="alert alert-warning text-center">
+    No users found matching your criteria.
+  </div>
+
+  <!-- Results Table -->
+  <div *ngIf="users.length > 0" class="card shadow-sm">
+    <div class="card-body p-0">
+
+      <table class="table table-hover mb-0 align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Enrolled Courses</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.userName }}</td>
+            <td>{{ user.email }}</td>
+
+            <!-- DOB -->
+            <td>
+              {{ user.profile?.dateOfBirth
+                 ? (user.profile.dateOfBirth | date:'dd MMM yyyy')
+                 : '-' }}
+            </td>
+
+            <!-- Enrollments -->
+            <td>
+              <ul class="mb-0 ps-3" *ngIf="user.enrollments?.length">
+                <li *ngFor="let e of user.enrollments">
+                  <strong>{{ e.course.title }}</strong>
+                  <span class="text-muted">
+                    ({{ e.status }})
+                  </span>
+                </li>
+              </ul>
+
+              <span *ngIf="!user.enrollments?.length"
+                    class="text-muted">
+                No enrollments
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="text-muted text-end mt-2">
+    Total Results: {{ totalCount }}
+  </div>
+
+</div>

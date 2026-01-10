@@ -1,0 +1,85 @@
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">CourseHub Dashboard</h2>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">Create User</h5>
+          <p class="card-text">Add a new user to the system</p>
+          <button class="btn btn-primary w-100"
+                  (click)="navigate('users/create')">
+            Go
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">Create User Profile</h5>
+          <p class="card-text">Add profile details for a user</p>
+          <button class="btn btn-secondary w-100"
+                  (click)="navigate('users/profile')">
+            Go
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">Create Instructor</h5>
+          <p class="card-text">Register a new instructor</p>
+          <button class="btn btn-success w-100"
+                  (click)="navigate('instructor/create')">
+            Go
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">Create Course</h5>
+          <p class="card-text">Add a new course</p>
+          <button class="btn btn-warning w-100"
+                  (click)="navigate('courses/create')">
+            Go
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title">Create Enrollment</h5>
+          <p class="card-text">Enroll users into courses</p>
+          <button class="btn btn-info w-100"
+                  (click)="navigate('enrollments/create')">
+            Go
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100 border-dark">
+        <div class="card-body text-center">
+          <h5 class="card-title">User Search</h5>
+          <p class="card-text">Search users with filters</p>
+          <button class="btn btn-dark w-100"
+                  (click)="navigate('users/search')">
+            Go
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
