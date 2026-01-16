@@ -43,10 +43,8 @@ export class UserSearchComponent {
     this.http.post<any>('https://localhost:7055/api/User/search', payload)
       .subscribe({
         next: res => {
-          // 🔴 THIS WAS YOUR MISSING LINE
           this.searchState.setResult(res.data);
 
-          // Navigate ONLY after state is set
           this.router.navigate(['/users/search-results']);
         },
         error: err => {

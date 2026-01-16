@@ -30,4 +30,7 @@ export class UserSearchResultComponent implements OnInit {
     this.users = result.items;
     this.totalCount = result.totalCount;
   }
+  onBackToSearch(): void {
+    this.router.navigate(['/users/search']);
+  }
 }
