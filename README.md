@@ -1,59 +1,163 @@
-# CoursehubFrontend
+# CourseHub Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
+CourseHub Frontend is a **modern Angular application** that serves as the user-facing layer of the CourseHub platform.  
+It is designed to consume the CourseHub Backend APIs and provide a clean, responsive, and scalable UI for course discovery and management.
 
-## Development server
+The project emphasizes **maintainable Angular architecture**, clear separation of concerns, and real-world frontend best practices.
 
-To start a local development server, run:
+---
+
+## Tech Stack
+
+- **Framework:** Angular
+- **Language:** TypeScript
+- **UI:** HTML, CSS
+- **State Management:** Component-based (extensible for NgRx)
+- **API Communication:** REST (HttpClient)
+- **Tooling:** Angular CLI
+- **Package Manager:** npm
+
+---
+
+## Core Features
+
+- Course listing and discovery UI
+- Course search with **multiple filters**
+- Backend API integration
+- Modular component-based architecture
+- Reusable services and models
+- Environment-based configuration
+- Scalable folder structure
+
+---
+
+## Project Structure
+
+```
+CourseHub-Frontend
+│
+├── src
+│   ├── app
+│   │   ├── core
+│   │   │   ├── services
+│   │   │   ├── guards
+│   │   │   └── interceptors
+│   │   │
+│   │   ├── features
+│   │   │   ├── courses
+│   │   │   └── users
+│   │   │
+│   │   ├── shared
+│   │   │   ├── components
+│   │   │   ├── models
+│   │   │   └── utilities
+│   │   │
+│   │   └── app.module.ts
+│   │
+│   ├── assets
+│   └── environments
+│
+└── angular.json
+```
+
+---
+
+## Architecture Principles
+
+- Feature-based module organization
+- Smart vs Dumb component separation
+- Services handle all API communication
+- No business logic in templates
+- Strong typing using interfaces and models
+
+This is not a template-driven demo app — it is structured for real production growth.
+
+---
+
+## Course Search UI
+
+The frontend provides a flexible UI for searching courses using:
+- Keyword
+- Category
+- Level
+- Other dynamic filters
+
+Search results are driven entirely by backend APIs and designed to be easily extendable.
+
+---
+
+## Backend Integration
+
+This frontend consumes APIs exposed by:
+**CourseHub Backend**
+
+Key integration points:
+- Course search endpoints
+- Course listing APIs
+- Future authentication endpoints
+
+Environment-specific API URLs are configured via Angular environments.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (LTS)
+- npm
+- Angular CLI
+
+### Install & Run
 
 ```bash
+git clone https://github.com/Ganeshmoorthii/CourseHub-Frontend.git
+cd CourseHub-Frontend
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Open:
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Development Guidelines
 
-## Building
+- Follow Angular style guide
+- Keep components small and focused
+- Avoid logic inside HTML templates
+- Use services for shared logic
+- Prefer composition over inheritance
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Roadmap
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Planned improvements:
+- Authentication & authorization UI
+- Pagination and sorting
+- Global error handling
+- UI state management
+- Performance optimizations
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Why This Project Exists
 
-```bash
-ng test
-```
+This frontend is built to:
+- Practice real-world Angular application structure
+- Work seamlessly with a clean backend
+- Demonstrate frontend engineering maturity
 
-## Running end-to-end tests
+If you understand this codebase, you understand more than just Angular syntax.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## Maintainer
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Ganesh Moorthi**  
+Frontend Developer  
+Repository: https://github.com/Ganeshmoorthii/CourseHub-Frontend
