@@ -29,7 +29,11 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let user of users">
+          <tr *ngFor="let user of users"
+              appHighlightOnHover
+              highlightColor="table-active"
+              (click)="onRowClick(user.userName)"
+              [class.selected]="selectedUserName === user.userName">
             <td>{{ user.userName }}</td>
             <td>{{ user.email }}</td>
 
@@ -64,8 +68,11 @@
   </div>
 
   <!-- Footer -->
-  <div class="text-muted text-end mt-2">
+  <div class="text-muted text-end mt-2">  
     Total Results: {{ totalCount }}
   </div>
 
+  <div>
+    <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+  </div>
 </div>
